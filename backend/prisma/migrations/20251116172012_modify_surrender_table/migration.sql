@@ -10,7 +10,7 @@
 
 */
 -- AlterTable
-ALTER TABLE `surrender` MODIFY `owner_phone` VARCHAR(191) NOT NULL,
+ALTER TABLE `Surrender` MODIFY `owner_phone` VARCHAR(191) NOT NULL,
     MODIFY `age` VARCHAR(191) NOT NULL,
     MODIFY `spayed` VARCHAR(191) NOT NULL,
     MODIFY `vaccination` VARCHAR(191) NOT NULL,

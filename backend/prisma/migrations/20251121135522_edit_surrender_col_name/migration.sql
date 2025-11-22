@@ -24,7 +24,7 @@
 
 */
 -- AlterTable
-ALTER TABLE `surrender` DROP COLUMN `add_info`,
+ALTER TABLE `Surrender` DROP COLUMN `add_info`,
     DROP COLUMN `child_friendly`,
     DROP COLUMN `health_issue`,
     DROP COLUMN `issue_desc`,
