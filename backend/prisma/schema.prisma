@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  seed = "node prisma/seed.js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  name            String
+  email           String    @unique
+  password        String
+  phone           String
+  street_address  String
+  door_floor      String
+  zip_code        String
+  occupation      String
+  interested      Json
+  subscrption     Boolean
+  createdAt       DateTime  @default(now())
+  volunteer       String
+  donation        String
+  message         String
+  surrender       Surrender[]
+}
+
+model Pets {
+  id            Int       @id @default(autoincrement())
+  image         String
+  name          String
+  type          String
+  age           Int
+  gender        String
+  breed         String
+  description   String
+  personality   Json
+  special       Boolean
+  adoption      Adoption[]
+}
+
+model Surrender {
+  id              Int       @id @default(autoincrement())
+  userId          Int
+  user            User      @relation(fields:[userId], references:[id])
+  owner_name      String
+  owner_address   String
+  owner_email     String
+  owner_phone     String
+  petName         String
+  petType         String
+  age             String
+  gender          String
+  breed           String
+  spayedNeutered  String
+  vaccinated      String
+  microchipped    String
+  healthIssues    String
+  healthDetails   String
+  personality     String
+  goodWithKids    String
+  goodWithPets    String
+  reason          String
+  urgency         String
+  additionalInfo  String
+}
+
+model Adoption {
+  id                  Int       @id @default(autoincrement())
+  fullName            String
+  email               String
+  phone               String
+  address             String
+  zipCode             String
+  housingType         String
+  ownOrRent           String
+  landlordApproval    String
+  hasYard             String
+  householdMembers    String
+  hasChildren         String
+  childrenAges        String
+  hasPets             String
+  petDetails          String
+  experience          String
+  hoursAlone          String
+  reason              String
+  petId               Int
+  pet                 Pets    @relation(fields:[petId], references:[id])
+}

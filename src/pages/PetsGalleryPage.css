@@ -1,0 +1,304 @@
+.pets-gallery-page {
+  width: 100%;
+}
+
+.gallery-header {
+  background: linear-gradient(135deg, #FFE5DC 0%, #E8F5F5 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.gallery-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.gallery-header p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+.gallery-controls {
+  margin-bottom: 40px;
+}
+
+.search-box {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid var(--neutral-medium);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.filter-dropdowns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.filter-select {
+  padding: 12px 15px;
+  border: 2px solid var(--neutral-medium);
+  background-color: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.filter-select:hover {
+  border-color: var(--primary-color);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.clear-filters-btn {
+  padding: 12px 20px;
+  border: 2px solid var(--error);
+  background-color: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--error);
+  font-weight: 600;
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+.clear-filters-btn:hover {
+  background-color: var(--error);
+  color: white;
+}
+
+.pets-count {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.pet-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.pet-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: var(--neutral-medium);
+}
+
+.pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.special-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--warning);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pet-info {
+  padding: 20px;
+}
+
+.pet-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.pet-breed {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.pet-details {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.pet-personality {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.trait-tag {
+  background-color: var(--neutral-light);
+  color: var(--text-primary);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.btn-small {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-results p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .gallery-header h1 {
+    font-size: 2rem;
+  }
+
+  .filter-dropdowns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .clear-filters-btn {
+    align-self: stretch;
+    margin-bottom: 0;
+  }
+
+  .pets-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Dark mode styles */
+.dark-mode .gallery-header {
+  background: linear-gradient(135deg, #1a2332 0%, #1e2f3f 100%);
+}
+
+.dark-mode .search-box input {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-mode .filter-group label {
+  color: #e2e8f0;
+}
+
+.dark-mode .filter-select {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e2e8f0' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+}
+
+.dark-mode .filter-select:hover {
+  border-color: var(--primary-color);
+}
+
+.dark-mode .filter-select:focus {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.dark-mode .clear-filters-btn {
+  background-color: #2d3748;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.dark-mode .clear-filters-btn:hover {
+  background-color: var(--error);
+  color: white;
+}
+
+.dark-mode .pet-card {
+  background-color: #2d3748;
+}
+
+.dark-mode .trait-tag {
+  background-color: #4a5568;
+}

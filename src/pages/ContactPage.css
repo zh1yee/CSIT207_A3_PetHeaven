@@ -1,0 +1,144 @@
+.contact-page {
+  width: 100%;
+}
+
+.contact-header {
+  background: linear-gradient(135deg, #ffe5dc 0%, #e8f5f5 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.contact-card p {
+  color: var(--text-light);
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.map-placeholder {
+  height: 100%;
+  min-height: 400px;
+  background-color: var(--neutral-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+.faq-section {
+  margin-top: 60px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+}
+
+.faq-item {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.faq-item h3 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Add dark mode styles */
+.dark-mode .contact-header {
+  background: linear-gradient(135deg, #1a2332 0%, #1e2f3f 100%);
+}
+
+.dark-mode .contact-card {
+  background-color: #2d3748;
+}
+
+.dark-mode .contact-map {
+  background-color: #2d3748;
+}
+
+.dark-mode .map-placeholder {
+  background-color: #4a5568;
+}
+
+.dark-mode .faq-item {
+  background-color: #2d3748;
+}
