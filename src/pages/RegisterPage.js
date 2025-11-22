@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useToast } from "../context/ToastContext"
 import { useAuth } from "../context/AuthContext"
+import { API_ENDPOINTS } from "../config/api"
 import "./FormPages.css"
 
 function RegisterPage() {
@@ -79,7 +80,7 @@ function RegisterPage() {
 
     
     try {
-      const response = await fetch("/api/user/create", {
+      const response = await fetch(API_ENDPOINTS.CREATE_USER, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

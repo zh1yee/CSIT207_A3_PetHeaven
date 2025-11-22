@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useToast } from "../context/ToastContext"
 import { useAuth } from "../context/AuthContext"
+import { API_ENDPOINTS } from "../config/api"
 import "./FormPages.css"
 
 function LoginPage() {
@@ -55,7 +56,7 @@ function LoginPage() {
     e.preventDefault()
     if (validateForm()) {
       try {
-        const response = await fetch("/api/user/login", {
+        const response = await fetch(API_ENDPOINTS.LOGIN, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

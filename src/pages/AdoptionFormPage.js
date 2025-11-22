@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { useToast } from '../context/ToastContext';
 import { useAuth } from '../context/AuthContext';
+import { API_ENDPOINTS } from '../config/api';
 import './FormPages.css';
 
 function AdoptionFormPage() {
@@ -103,7 +104,7 @@ function AdoptionFormPage() {
     };
 
     try {
-      const response = await fetch('/api/adoption/create', {
+      const response = await fetch(API_ENDPOINTS.CREATE_ADOPTION, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

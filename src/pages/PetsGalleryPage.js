@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '../context/ToastContext';
+import { API_ENDPOINTS } from '../config/api';
 import './PetsGalleryPage.css';
 
 function PetsGalleryPage() {
@@ -21,7 +22,7 @@ function PetsGalleryPage() {
   const fetchPets = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/pets/view');
+      const response = await fetch(API_ENDPOINTS.GET_PETS);
       
       if (!response.ok) {
         throw new Error('Failed to fetch pets');
