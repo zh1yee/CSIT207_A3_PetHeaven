@@ -4,6 +4,14 @@
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
+// Debug: Log API configuration (only in development)
+if (process.env.NODE_ENV === 'development') {
+  console.log('API Configuration:', {
+    API_BASE_URL: API_BASE_URL || 'Not set (using proxy)',
+    NODE_ENV: process.env.NODE_ENV,
+  });
+}
+
 // Helper function to build API URLs
 const getApiUrl = (endpoint) => {
   // Remove leading slash if present to avoid double slashes

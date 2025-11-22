@@ -22,10 +22,22 @@ function PetsGalleryPage() {
   const fetchPets = async () => {
     setLoading(true);
     try {
-      const response = await fetch(API_ENDPOINTS.GET_PETS);
+      const url = API_ENDPOINTS.GET_PETS;
+      console.log('Fetching pets from:', url);
+      
+      const response = await fetch(url);
+      
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        console.error('Non-JSON response received:', text.substring(0, 200));
+        throw new Error(`Server returned ${response.status}: Expected JSON but got ${contentType}`);
+      }
       
       if (!response.ok) {
-        throw new Error('Failed to fetch pets');
+        const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
+        throw new Error(errorData.error || `Failed to fetch pets: ${response.status}`);
       }
 
       const data = await response.json();
@@ -33,7 +45,8 @@ function PetsGalleryPage() {
       //showToast('Pets loaded successfully!', 'success');
     } catch (error) {
       console.error('Error fetching pets:', error);
-      showToast('Unable to load pets. Please try again later.', 'error');
+      console.error('API URL was:', API_ENDPOINTS.GET_PETS);
+      showToast('Unable to load pets. Please check if the backend server is running.', 'error');
     } finally {
       setLoading(false);
     }
